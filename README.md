@@ -49,6 +49,14 @@ calc { expression: "15 + 27 * sqrt(9)" }   →  96
 `new Function` + 正则白名单是不安全的——`constructor.constructor("return process")()` 可以直达
 `Function` 构造器执行任意代码。本实现不走任何代码求值捷径。
 
+### 原型链防护
+
+白名单用 `Object.create(null)` 创建（无原型链），查表用 `Object.hasOwn` 而非 `in`。
+
+这不是多余的谨慎：早期版本用了 `text in FUNCS`，而 `'__proto__' in {}` 恒为 `true`，
+导致 `__proto__`、`constructor`、`toString` 被当作合法标识符放行。测试套件抓到后已修复，
+并加了 7 条原型污染回归用例固定住这个行为。
+
 ## 错误码
 
 出错时返回结构化错误，方便模型自我修正而不是盲目重试：
@@ -71,10 +79,17 @@ calc { expression: "15 + 27 * sqrt(9)" }   →  96
 ## 测试
 
 ```bash
-node dsh-calc-tool/test/evaluate.test.mjs
+node test/evaluate.test.mjs
 ```
 
-覆盖数值用例与攻击载荷（`constructor.constructor` 链、`process.exit`、`globalThis`、模板字符串注入、超深嵌套）。
+43 条用例，覆盖：
+
+- 数值正确性与优先级（16 条）
+- 攻击载荷：`constructor.constructor` 链、`process.exit`、`globalThis`、`require`、
+  模板字符串、分号注入、方括号/花括号（16 条）
+- 原型污染回归：`__proto__`、`constructor`、`toString`、`valueOf`、`hasOwnProperty`（7 条）
+- 上限守卫：超深括号、超长表达式（2 条）
+- 参数校验（2 条）
 
 ## 兼容性
 
