@@ -1,0 +1,44 @@
+{
+  "name": "dsh-calc-tool",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Deterministic calculator tool for DeepSeek Harness: the model stops guessing arithmetic.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yhy854/dsh-calc-tool.git"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "lib/*.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "calculator",
+    "math",
+    "计算器",
+    "算术"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-tools": ">=0.2.0-0"
+  },
+  "license": "MIT"
+}

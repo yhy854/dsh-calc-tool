@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Calculator",
+    "description": "Deterministic math evaluation, so the model never guesses arithmetic."
+  }
+}
