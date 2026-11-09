@@ -1,4 +1,4 @@
-# dsh-calc-tool · DSH 精准计算器插件
+﻿# dsh-calc-tool · DSH 精准计算器插件
 
 **专治大模型「算术脑补」与「心算翻车」！给 DeepSeek Harness 的 Agent 配一把零误差、高安全的硬核计算器。**
 
@@ -26,7 +26,7 @@ dsh-calc-tool
 **GitHub 地址：**
 
 ```
-github:yhy854/dsh-calc-tool
+https://github.com/yhy854/dsh-calc-tool
 ```
 
 装完按面板提示重启，**新开一个会话**让它算个数试试。
