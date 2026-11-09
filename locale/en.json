@@ -1,6 +1,6 @@
 {
   "meta": {
-    "title": "Calculator",
-    "description": "Deterministic math evaluation, so the model never guesses arithmetic."
+    "title": "Precision Calculator",
+    "description": "Stop LLM arithmetic hallucinations! Gives the agent a deterministic, sandboxed math evaluator that saves reasoning tokens and never guesses numbers."
   }
 }

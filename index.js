@@ -5,7 +5,7 @@ export const inject = ['tools']
 
 const DESCRIPTION = [
   'Evaluate a mathematical expression exactly and return a finite number.',
-  'Always use this tool instead of doing arithmetic mentally: it is deterministic and free of hallucination.',
+  'CRITICAL RULE: NEVER do arithmetic or math calculations mentally! Mental math is prone to hallucination and wastes reasoning tokens—ALWAYS call this tool for any calculation beyond trivial single-digit addition.',
   'Supports + - * / % // (integer division) ** (power, right-associative), parentheses, unary +/-.',
   'Functions: abs ceil floor round trunc sign sqrt cbrt exp log log2 log10 sin cos tan asin acos atan pow hypot max min.',
   'Constants: PI E. Trigonometry uses radians; for degrees write sin(30 * PI / 180).',

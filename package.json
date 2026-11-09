@@ -2,7 +2,7 @@
   "name": "dsh-calc-tool",
   "version": "0.1.0",
   "type": "module",
-  "description": "Deterministic calculator tool for DeepSeek Harness: the model stops guessing arithmetic.",
+  "description": "DeepSeek Harness 专属硬核计算器：终结大模型算术脑补与幻觉，0 误差秒出结果，省下反复验算的巨量 Token。",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -30,7 +30,8 @@
     "calculator",
     "math",
     "计算器",
-    "算术"
+    "算术",
+    "防幻觉"
   ],
   "dsh": {
     "bundle": {
